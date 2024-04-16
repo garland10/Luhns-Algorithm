@@ -1,7 +1,7 @@
 ﻿/********************************************
  *                                          *
- * Name: Bill Nicholson                     *
- * email: nicholdw@ucmail.uc.edu            *
+ * Name: Dylan Shira                        *
+ * email: shiradv@mail.uc.edu               *
  * Luhn's Algorithm                         *
  *                                          *
  ********************************************/
@@ -52,9 +52,40 @@ namespace Luhns_Algorithm
 
                 // If a multiple of 10, card is valid
                 return (sum % 10 == 0);
-            } catch (Exception) {
+            }
+            catch (Exception)
+
+            {
                 return false;
             }
         }
+
+        class CreditCardValidatorTest
+        {
+            static void M(string[] args)
+            {
+                // Test cases (fake credit card numbers)
+                string[] testCardNumbers = {
+                "4111111111111111", // Valid Visa card
+                "1234567890123456", // Invalid card
+                "5555555555554444"  // Valid Mastercard
+            };
+
+                foreach (var cardNumber in testCardNumbers)
+                {
+                    if (Program.ValidateCard(cardNumber))
+                    {
+                        Console.WriteLine($"{cardNumber} appears to be a valid format.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"That number ({cardNumber}) does not appear to be a valid format.");
+                    }
+                }
+            }
+        }
     }
+
 }
+    
+

@@ -52,10 +52,7 @@ namespace Luhns_Algorithm
 
                 // If a multiple of 10, card is valid
                 return (sum % 10 == 0);
-            }
-            catch (Exception)
-
-            {
+            } catch (Exception) {
                 return false;
             }
         }
